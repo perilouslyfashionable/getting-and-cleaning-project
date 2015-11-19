@@ -1,6 +1,5 @@
 library(dplyr)
 
-setwd("C:/Users/simon/Coursera/getting_and_cleaning_data/Project/")
 
 features <- read.table("UCI HAR Dataset/features.txt", stringsAsFactors = FALSE)
 V1 <- c(0, 0)
