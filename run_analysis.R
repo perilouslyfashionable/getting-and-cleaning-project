@@ -31,6 +31,8 @@ all.data<-rbind(train.data, test.data)
 rm(test.data)
 rm(train.data)
 names(all.data) <- features[, 2]
+
+#Remove irrelevant variables and give descriptive names to activities
 all.data <- all.data[, names(all.data) == "Activity" | names(all.data) == "Subject" | grepl("std", names(all.data), ignore.case = TRUE)|grepl("mean", names(all.data), ignore.case = TRUE)]
 all.data <- inner_join(all.data, activity.labels, by = c("Activity" = "V1"))
 all.data <- mutate(all.data, Activity = V2)
